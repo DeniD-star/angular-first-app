@@ -3,3 +3,9 @@
 <input [value]="title">
 
 <button (click)="changeTitle()">CLICK</button>
+
+<ul>
+  <li *ngFor="let user of users">
+    {{user.name}}
+  </li>
+</ul>
