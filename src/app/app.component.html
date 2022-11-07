@@ -1,11 +1,17 @@
-<div>{{title}}</div>
+<!-- <div>{{ title }}</div>
 
-<input [value]="title">
+<input [value]="title" />
 
 <button (click)="changeTitle()">CLICK</button>
 
 <ul>
   <li *ngFor="let user of users">
-    {{user.name}}
+    <span> {{ user.name }} </span>
+    <span> {{ user.age }} </span>
   </li>
-</ul>
+</ul> -->
+
+
+<div *ngIf="showText">VISIBLE</div>
+<button (click)="toggleText()">{{showText ? 'Hide Text' : 'Show text'}}</button>
+
