@@ -1,18 +1,20 @@
-<!-- <div>{{ title }}</div>
+<div>{{ title }}</div>
 
-<input [value]="title" />
+<!-- <input [value]="title" /> -->
+<input #inputElement type="text" />
 
-<button (click)="changeTitle()">CLICK</button>
+<button (click)="changeTitleHandler(inputElement)">CLICK</button>
+<!-- <button (click)="changeTitle()">CLICK</button> -->
 
-<ul>
+<!-- <ul>
   <li *ngFor="let user of users">
     <span> {{ user.name }} </span>
     <span> {{ user.age }} </span>
   </li>
-</ul> -->
+</ul> --> -->
 
 
-<div *ngIf="showText">VISIBLE</div>
+<!-- <div *ngIf="showText">VISIBLE</div> -->
 <!-- <button (click)="toggleText()">{{showText ? 'Hide Text' : 'Show text'}}</button> -->
-<button (click)="toggleTextEvent($event)">{{showText ? 'Hide Text' : 'Show text'}}</button>
+<!-- <button (click)="toggleTextEvent($event)">{{showText ? 'Hide Text' : 'Show text'}}</button> -->
 

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  // title = 3;
+   title = '3';
 
   // users = [
   //   { name: 'Ivan 1',
@@ -36,8 +36,12 @@ export class AppComponent {
   //   this.showText = !this.showText;
   // }
 
-  toggleTextEvent(event: MouseEvent):void{
-    this.showText = !this.showText;
-  }
+  // toggleTextEvent(event: MouseEvent):void{
+  //   this.showText = !this.showText;
+  // }
 
+  changeTitleHandler(inputEl:HTMLInputElement):void{
+    this.title = inputEl.value;
+    inputEl.value ='';
+  }
 }
