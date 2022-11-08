@@ -32,9 +32,12 @@ export class AppComponent {
 
 
   showText = true;
-  toggleText(): void{
+  // toggleText(): void{
+  //   this.showText = !this.showText;
+  // }
+
+  toggleTextEvent(event: MouseEvent):void{
     this.showText = !this.showText;
   }
-
 
 }
