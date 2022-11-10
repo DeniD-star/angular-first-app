@@ -1,10 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { IUser } from '../interfaces/user';
 
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.scss']
+  styleUrls: ['./user-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserListComponent implements OnInit {
 
@@ -13,17 +14,17 @@ export class UserListComponent implements OnInit {
 
   constructor() {
     console.log(this.userArray);
-    debugger;
+
   }
 
   ngOnInit(): void {
     console.log(this.userArray);
-    debugger;
+
   }
 
   ngOnChanges(simpleChanges: SimpleChanges): void {
     console.log(simpleChanges);
-    debugger;
+   
   };
 
 
