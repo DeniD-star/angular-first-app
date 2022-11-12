@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { myStringInjectionToken } from './app.module';
 import { IUser } from './interfaces/user';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root'//ozna4ava 4e tozi service 6te e dostupem v cqloto prilojenie
 })
 export class UserService {
 
@@ -21,11 +22,19 @@ export class UserService {
     },
   ];
 
-  constructor() { }
+  constructor(@Inject(myStringInjectionToken) myString: string) {
+    console.log(myString);
+
+  }
 
 
 
   addNewUserHandler(newUser: IUser): void {
    this.users = this.users.concat(newUser);
+  }
+
+  ngOnDestroy(): void{
+    //v servisa moje da su6testvuva samo tozi lifesicle method, ako go ima tuk sutvetno tova koeto e vilo deklarirano v providers na edna componenta, pri neinoto uni6tojenie, servisa i toi 6te bude uni6tojen,
+    //a ako providers sa na nivo module, tova suotvetno nqma da bude izvikano i nqma da e neobhodimo
   }
 }
