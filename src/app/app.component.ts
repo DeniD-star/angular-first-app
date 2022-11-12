@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IUser } from './interfaces/user';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-root',
@@ -7,33 +8,8 @@ import { IUser } from './interfaces/user';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  users = [
-    {
-      name: 'Ivan 1',
-      age: 21,
-    },
-    {
-      name: 'Ivan 2',
-      age: 22,
-    },
-    {
-      name: 'Ivan 3',
-      age: 23,
-    },
-  ];
+//ako e public 6te bude dostupno i vuv html file(view)
+constructor(public userService: UserService){
 
-  addNewUserHandler(newUser: IUser): void {
-    // this.users = this.users.concat(newUser);
-  }
-  constructor() {
-    setInterval(()=>{
-      this.users.push({
-        name: 'Ivan 4',
-        age: 24,
-      })
-
-      console.log('New user added!');
-
-    }, 5000)
-  }
+}
 }
