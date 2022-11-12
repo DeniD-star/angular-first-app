@@ -47,16 +47,20 @@ export class AppComponent implements OnInit {
     this.loadUsers();
   }
 
-  loadUsers(search?: string): void{
+  loadUsers(search?: string): void {
     this.users = undefined;
-    this.userService.loadUsers(search).subscribe(users=> this.users = users);
+    this.userService.loadUsers(search).subscribe(
+      (users) => (this.users = users), //next fn
+      (error) => console.error(error), //error fn
+      () => console.log('Load users stream completed!')//completed
+    );
   }
-  reloadButtonHandler(){
+  reloadButtonHandler() {
     this.loadUsers();
   }
 
-  searchButtonHandler(searchInput: HTMLInputElement): void{
-    const {value} = searchInput;
+  searchButtonHandler(searchInput: HTMLInputElement): void {
+    const { value } = searchInput;
     this.loadUsers(value);
   }
 }
