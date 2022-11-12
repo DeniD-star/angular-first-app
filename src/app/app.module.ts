@@ -6,6 +6,7 @@ import { TestComponent } from './test/test.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserListItemComponent } from './user-list-item/user-list-item.component';
 import { UserService } from './user.service';
+import {HttpClientModule} from '@angular/common/http'
 
 
 export const myStringInjectionToken = new InjectionToken('myString');
@@ -18,7 +19,8 @@ export const myStringInjectionToken = new InjectionToken('myString');
     UserListItemComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [
     //tova e injection containera, tuk se suzdavat ne6tata koito da budat injectnati, i suotvetno ako sa poiskani ot drugi komponenti, i te da gi polzvat, i tam kudeto imame useClass: userService, komponentata koeto 6te go poiska da moje da suzdade istanciq na tozi klass

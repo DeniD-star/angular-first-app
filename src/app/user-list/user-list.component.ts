@@ -7,34 +7,34 @@ import { IUser } from '../interfaces/user';
   styleUrls: ['./user-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class UserListComponent implements OnInit {
+export class UserListComponent {
 
   @Input() userArray: IUser[] = [];
-  @Output() addUser = new EventEmitter<IUser>();
+  // @Output() addUser = new EventEmitter<IUser>();
 
-  constructor() {
-    console.log(this.userArray);
+  // constructor() {
+  //   console.log(this.userArray);
 
-  }
+  // }
 
-  ngOnInit(): void {
-    console.log(this.userArray);
+  // ngOnInit(): void {
+  //   console.log(this.userArray);
 
-  }
+  // }
 
-  ngOnChanges(simpleChanges: SimpleChanges): void {
-    console.log(simpleChanges);
-   
-  };
+  // ngOnChanges(simpleChanges: SimpleChanges): void {
+  //   console.log(simpleChanges);
+
+  // };
 
 
-  addNewUser(userNameInput: HTMLInputElement, userAgeInput: HTMLInputElement): void {
-    const { value: name } = userNameInput;
-    const { valueAsNumber: age } = userAgeInput;
+  // addNewUser(userNameInput: HTMLInputElement, userAgeInput: HTMLInputElement): void {
+  //   const { value: name } = userNameInput;
+  //   const { valueAsNumber: age } = userAgeInput;
 
-    this.addUser.emit({ name, age });
+  //   this.addUser.emit({ name, age });
 
-    userNameInput.value = '';
-    userAgeInput.value = '';
-  }
+  //   userNameInput.value = '';
+  //   userAgeInput.value = '';
+  // }
 }
