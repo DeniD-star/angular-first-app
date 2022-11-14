@@ -3,11 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
-import { UserListComponent } from './user-list/user-list.component';
-import { UserListItemComponent } from './user-list-item/user-list-item.component';
+
 import { UserService } from './user.service';
 import {HttpClientModule} from '@angular/common/http';
-import { TimeComponent } from './time/time.component'
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { UserModule } from './user/user.module';
+
 
 
 export const myStringInjectionToken = new InjectionToken('myString');
@@ -16,13 +19,14 @@ export const myStringInjectionToken = new InjectionToken('myString');
   declarations: [
     AppComponent,
     TestComponent,
-    UserListComponent,
-    UserListItemComponent,
-    TimeComponent
+
   ],
-  imports: [
+  imports: [//importvame si module , ne componentata
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    CoreModule,
+    SharedModule,
+    UserModule
   ],
   providers: [
     //tova e injection containera, tuk se suzdavat ne6tata koito da budat injectnati, i suotvetno ako sa poiskani ot drugi komponenti, i te da gi polzvat, i tam kudeto imame useClass: userService, komponentata koeto 6te go poiska da moje da suzdade istanciq na tozi klass
