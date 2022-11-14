@@ -10,6 +10,8 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserModule } from './user/user.module';
+import { AboutComponent } from './about/about.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
@@ -19,6 +21,7 @@ export const myStringInjectionToken = new InjectionToken('myString');
   declarations: [
     AppComponent,
     TestComponent,
+    AboutComponent,
 
   ],
   imports: [//importvame si module , ne componentata
@@ -26,7 +29,8 @@ export const myStringInjectionToken = new InjectionToken('myString');
     HttpClientModule,
     CoreModule,
     SharedModule,
-    UserModule
+    UserModule,
+    AppRoutingModule//s tova, tutovete sa ve4e configurirani i mogat da se izpolzvat
   ],
   providers: [
     //tova e injection containera, tuk se suzdavat ne6tata koito da budat injectnati, i suotvetno ako sa poiskani ot drugi komponenti, i te da gi polzvat, i tam kudeto imame useClass: userService, komponentata koeto 6te go poiska da moje da suzdade istanciq na tozi klass

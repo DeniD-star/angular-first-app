@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { IUser } from './interfaces/user';
-import { UserService } from './user.service'; //tuk ni e importnat samiq class
+import { Component} from '@angular/core';
+ //tuk ni e importnat samiq class
 
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
+
 
 // const promise = new Promise((resolve, reject)=>{//(promisite ne sa marzelivi, obzurvalite-da), edin promise v momenta v koito se suzdava , avtomati4no se startira i si stoi dori da ne bude izvikan(minus za razlika ot obzurvalite,)
 //   setTimeout(()=> resolve(3000), 3000)
@@ -32,35 +31,10 @@ of(1000, 200, 300)
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   //ako e public 6te bude dostupno i vuv html file(view)
   // constructor(public userService: UserService){// a tova koeto izpolzvame tuk e instanziq, toest obekt koito idva ot UserService
 
   // }
-  users: IUser[] | undefined;
 
-  constructor(public userService: UserService) {
-    // a tova koeto izpolzvame tuk e instanziq, toest obekt koito idva ot UserService
-  }
-  ngOnInit(): void {
-    // this.userService.loadUsers().subscribe(users=> this.users = users)
-    this.loadUsers();
-  }
-
-  loadUsers(search?: string): void {
-    this.users = undefined;
-    this.userService.loadUsers(search).subscribe(
-      (users) => (this.users = users), //next fn
-      (error) => console.error(error), //error fn
-      () => console.log('Load users stream completed!')//completed
-    );
-  }
-  reloadButtonHandler() {
-    this.loadUsers();
-  }
-
-  searchButtonHandler(searchInput: HTMLInputElement): void {
-    const { value } = searchInput;
-    this.loadUsers(value);
-  }
 }

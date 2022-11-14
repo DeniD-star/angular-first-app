@@ -3,13 +3,8 @@
   <app-user-list [userArray]="userService.users" (addUser)="userService.addNewUserHandler($event)"></app-user-list>
 </div> -->
 <div id="content">
-  <input #searchInput [class.hidden]="!users" type="text">
-  <div *ngIf="users">
-    <button (click)="reloadButtonHandler()">Reload</button>
-    <button (click)="searchButtonHandler(searchInput)">Search</button>
-  <app-user-list *ngIf="users" [userArray]="users!"></app-user-list>
-  <div *ngIf="!users">Loading...</div>
-</div>
+  <router-outlet></router-outlet>
+ 
 </div>
 
 <app-footer></app-footer>
